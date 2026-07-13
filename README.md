@@ -8,7 +8,7 @@ In this course, we use [Julia](https://julialang.org), a fast modern programming
 
 The steps below are reproduced from the [Pluto install guide](https://plutojl.org/#install).
 
-1. **Install Julia** download and install from the official site: https://julialang.org
+1. **Install Julia.** Download and install from the official site: https://julialang.org
 
 2. **Install Pluto** open the Julia REPL (Read-Eval-Print Loop, the interactive command line that starts when you launch Julia) and run:
 ```julia
