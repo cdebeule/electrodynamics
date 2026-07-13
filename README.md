@@ -4,7 +4,7 @@ Educational materials for a graduate-level electrodynamics course, including int
 
 ## Getting Started with Julia and Pluto
 
-In this course, we use [Julia](https://julialang.org), a fast modern programming language well suited for scientific computing, together with [Pluto](https://plutojl.org), a reactive notebook environment for Julia, to visualize and interactively explore electrodynamics concepts.
+In this course, we will visualize and interactively explore electrodynamics concepts using [Julia](https://julialang.org), a fast modern programming language well suited for scientific computing, together with [Pluto](https://plutojl.org), a reactive notebook environment for Julia.
 
 The steps below are reproduced from the [Pluto install guide](https://plutojl.org/#install).
 
