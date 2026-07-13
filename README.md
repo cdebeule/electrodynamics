@@ -1,4 +1,4 @@
-# Electrodynamics 1
+# Electrodynamics
 
 Educational materials for a graduate-level electrodynamics course, including interactive Julia Pluto notebooks.
 
