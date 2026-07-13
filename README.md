@@ -25,13 +25,13 @@ The steps below are reproduced from the [Pluto install guide](https://plutojl.or
 
    - **Directly from GitHub**: paste the raw file URL into the "Open a notebook" box, for example:
 
-     https://raw.githubusercontent.com/cdebeule/electrodynamocs/pluto/two_charge_field.jl
+     https://raw.githubusercontent.com/cdebeule/electrodynamocs/main/pluto/two-charge-field.jl
    
       Pluto will download and run it automatically.
 
-   - **From your own computer**: clone or download this repository, then enter the local path to the notebook (e.g. `pluto/two_charge_field.jl`) in the "Open a notebook" box.
+   - **From your own computer**: clone or download this repository, then enter the local path to the notebook (e.g. `pluto/two-charge-field.jl`) in the "Open a notebook" box.
 
 ## Notebooks
 
-- [two_charge_field.jl](pluto/two_charge_field.jl)
+- [two_charge_field.jl](pluto/two-charge-field.jl)
 - [laplace.jl](pluto/laplace.jl)
