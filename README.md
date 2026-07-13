@@ -33,5 +33,5 @@ The steps below are reproduced from the [Pluto install guide](https://plutojl.or
 
 ## Notebooks
 
-- [two_charge_field.jl](pluto/two-charge-field.jl)
+- [two-charge-field.jl](pluto/two-charge-field.jl)
 - [laplace.jl](pluto/laplace.jl)
