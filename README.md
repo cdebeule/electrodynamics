@@ -24,3 +24,4 @@ New to Julia and Pluto? The [Julia documentation](https://julialang.org) and [Pl
 ## Notebooks
 
 - [two_charge_field.jl](pluto/two_charge_field.jl)
+- [laplace.jl](pluto/laplace.jl)
