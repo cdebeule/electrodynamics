@@ -10,7 +10,7 @@ The steps below are reproduced from the [Pluto install guide](https://plutojl.or
 
 1. **Install Julia**: download and install from the official site: https://julialang.org
 
-2. **Install Pluto**: open the Julia REPL and run:
+2. **Install Pluto**: open the Julia REPL (Read-Eval-Print Loop, the interactive command line that starts when you launch Julia) and run:
 ```julia
    using Pkg
    Pkg.add("Pluto")
