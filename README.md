@@ -25,7 +25,7 @@ The steps below are reproduced from the [Pluto install guide](https://plutojl.or
 
    - **Directly from GitHub**: paste the raw file URL into the "Open a notebook" box, for example:
 
-     https://raw.githubusercontent.com/cdebeule/electrodynamocs/main/pluto/two_charge_field.jl
+     https://raw.githubusercontent.com/cdebeule/electrodynamocs/pluto/two_charge_field.jl
    
       Pluto will download and run it automatically.
 
