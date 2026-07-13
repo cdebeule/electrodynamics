@@ -19,7 +19,7 @@ Educational materials for a graduate-level electrodynamics course, including int
 ```
    This opens Pluto in your browser, where you can open any `.jl` notebook from the `pluto/` folder.
 
-New to Julia and Pluto? The [Julia documentation](https://julialang.org) and [Pluto.jl website](https://plutojl.org) are good places to start.
+New to Julia and Pluto? The [Julia documentation](https://docs.julialang.org) and [Pluto.jl website](https://plutojl.org) are good places to start.
 
 ## Notebooks
 
