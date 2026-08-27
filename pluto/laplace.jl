@@ -30,6 +30,14 @@ Draw conductors with the mouse. The Laplace equation ∇²V = 0 is solved on eve
 Each stroke becomes a conductor held at the voltage you set. Closed shapes can be
 drawn filled, so the interior is held at the same voltage as the boundary.
 
+### Units
+
+There are none: everything here is dimensionless. Laplace's equation has no
+scale of its own, so only ratios matter. Two plates 10 units long and 1 unit
+apart give the same picture whether that unit is a millimeter or a meter, and
+doubling every voltage doubles the whole solution. Read `V = 1` as one volt if
+you like, but nothing in the notebook depends on it.
+
 ### Model
 
 * The drawing pad converts from canvas pixels to `x` and `y` before handing a
@@ -896,6 +904,13 @@ begin
     md"**Stroke parsing.** `parse_strokes` turns the pad's JSON into conductors, skipping anything malformed. `_clean_pts` and `_f64` do the per-point conversion."
 end
 
+# ╔═╡ e269f4de-b900-469e-ad3a-d09b55c28adc
+conductors = parse_strokes(raw_strokes; halfwidth = 1.0 * h);
+# conductors = vcat(parse_strokes(raw_strokes; halfwidth = 1.0 * h), ncku);
+
+# ╔═╡ 9a3aa3c3-2c91-47a7-b3b8-88a0dcfe5104
+bcs = build_bcs(xs, ys, conductors);
+
 # ╔═╡ 5b3b4779-d699-400e-a500-618c9bbefebb
 begin
     """
@@ -995,6 +1010,9 @@ begin
     md"**Solver.** Sweeps the grid replacing each free cell with the average of its four neighbors, held at the conductor voltages, until nothing moves. Each step overshoots the average slightly to speed up convergence. `mirror_edges!` applies the open boundary condition and `residual` measures how converged the potential is."
 end
 
+# ╔═╡ 11431ed4-6b55-493a-86f1-b199f2a1a665
+sol = solve_relax(bcs.V, bcs.fixed; open = open_boundary, tol = 1e-6, maxiter = 40_000);
+
 # ╔═╡ 1375973e-9111-4718-8fb8-d1caca8c8769
 begin
     gr()
@@ -1012,16 +1030,6 @@ end
   </div>
 </div>
 """)
-
-# ╔═╡ e269f4de-b900-469e-ad3a-d09b55c28adc
-conductors = parse_strokes(raw_strokes; halfwidth = 1.0 * h);
-# conductors = vcat(parse_strokes(raw_strokes; halfwidth = 1.0 * h), ncku);
-
-# ╔═╡ 9a3aa3c3-2c91-47a7-b3b8-88a0dcfe5104
-bcs = build_bcs(xs, ys, conductors);
-
-# ╔═╡ 11431ed4-6b55-493a-86f1-b199f2a1a665
-sol = solve_relax(bcs.V, bcs.fixed; open = open_boundary, tol = 1e-6, maxiter = 40_000);
 
 # ╔═╡ 79176171-a27e-4082-8029-4a7abc0b16eb
 let
