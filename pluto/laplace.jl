@@ -27,25 +27,17 @@ Draw conductors with the mouse. The Laplace equation ∇²V = 0 is solved on eve
 
 ### Drawing
 
-Each stroke becomes a conductor held at the voltage you set. Closed shapes can be
-drawn filled, so the interior is held at the same voltage as the boundary.
+Each stroke becomes a conductor held at the voltage you set. Closed shapes can be drawn filled, so the interior is held at the same voltage as the boundary.
 
 ### Units
 
-There are none: everything here is dimensionless. Laplace's equation has no
-scale of its own, so only ratios matter. Two plates 10 units long and 1 unit
-apart give the same picture whether that unit is a millimeter or a meter, and
-doubling every voltage doubles the whole solution. Read `V = 1` as one volt if
-you like, but nothing in the notebook depends on it.
+Everything in this notebook is dimensionless. Laplace's equation is scale invariant, so only ratios matter. Two plates 10 units long and 1 unit apart give the same potential whether that unit is a millimeter or a meter, and doubling every voltage doubles the whole solution.
 
 ### Model
 
-* The drawing pad converts from canvas pixels to `x` and `y` before handing a
-  stroke over, so everything after it works in the same units as `xs` and `ys`.
+* The drawing pad converts from canvas pixels to `x` and `y` before handing a stroke over, so everything after it works in the same units as `xs` and `ys`.
 * Arrays are `V[i,j]` with `i` running over `ys` (row) and `j` over `xs` (column).
-* `xs` and `ys` are ascending ranges with **equal spacing**. The solver averages
-  the four neighbors of a cell with equal weight, which is only correct when the
-  spacing in `x` matches the spacing in `y`.
+* `xs` and `ys` are ascending ranges with **equal spacing**. The solver averages the four neighbors of a cell with equal weight, which is only correct when the spacing in `x` matches the spacing in `y`.
 
 ### Boundary of the domain
 
@@ -53,16 +45,14 @@ The outer edge needs a condition of its own, and there are two to choose from.
 
 **Grounded** holds it at V = 0, like a metal box around everything.
 
-**Open** imposes ∂V/∂n = 0 instead, which approximates an unbounded domain. Use
-this one for an isolated charged conductor.
+**Open** imposes ∂V/∂n = 0 instead, which approximates an unbounded domain. Use this one for an isolated charged conductor.
 """
 
 # ╔═╡ 38f4ccdb-a719-470d-a149-ab62ad3fda66
 md"""
 ### Grid
 
-The physical domain. Everything downstream reads `xs`, `ys` and `h` from here,
-so this is the one place to change resolution or extent.
+The physical domain. Everything downstream reads `xs`, `ys` and `h` from here, so this is the one place to change resolution or extent.
 
 | Parameter | Description |
 |:----------|:-----------|
@@ -70,8 +60,7 @@ so this is the one place to change resolution or extent.
 | `L`       | half width of the square domain, so it spans `[-L, L]` |
 | `h`       | grid spacing, and the natural unit for conductor thickness |
 
-Doubling `n` takes roughly eight times longer. At `n = 201` the solve is fast
-enough to redraw on every stroke; drop to 101 if drawing feels sluggish.
+At `n = 201` the solve is fast enough to redraw on every stroke; drop to 101 if drawing feels sluggish.
 """
 
 # ╔═╡ 560381af-e4f7-4c0e-a898-77bc97bf3157
