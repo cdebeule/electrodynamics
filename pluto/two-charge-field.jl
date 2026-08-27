@@ -17,13 +17,11 @@ macro bind(def, element)
 end
 
 # ╔═╡ bf739f8c-4576-40c0-81b3-f48dbfa3e8ea
-using StaticArrays, Plots
-
-# ╔═╡ e50d0857-d96f-428f-ae1c-8a2edf397135
-using PlutoUI: Slider
-
-# ╔═╡ 96a54534-ada9-4c41-8c7a-767f10bb9d9b
-using PlutoUI.ExperimentalLayout: vbox, hbox
+begin
+	using StaticArrays, Plots
+	using PlutoUI: Slider
+	using PlutoUI.ExperimentalLayout: vbox, hbox
+end
 
 # ╔═╡ fdeb7b6a-d172-4849-89d8-4ad879521d05
 md"""
@@ -92,8 +90,8 @@ end
     return V, ψ
 end
 
-# ╔═╡ 1124c018-9996-437f-8ff3-5de267c0e9fe
-begin
+# ╔═╡ c6567aa1-a53e-4cde-849e-bf066802c0a9
+let
 	xs = range(-2, 2, length=160)
 	ys = range(-2, 2, length=160)
 	charges = (Charge(q1, SVector(x1,0.0)), Charge(q2, SVector(x2,0.0)))
@@ -108,10 +106,7 @@ begin
 	contour!(xs, ys, ψs; c=:red, clims=(-10, 10), levels=nl, colorbar=false)
 	scatter!([x1], [0.0], color=:black, markersize=5, label=false)
 	scatter!([x2], [0.0], color=:black, markersize=5, label=false)
-end;
-
-# ╔═╡ a191bdeb-f089-45f3-8b1e-7658421be8e9
-p
+end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -130,7 +125,7 @@ StaticArrays = "~1.9.18"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.12.6"
+julia_version = "1.12.7"
 manifest_format = "2.0"
 project_hash = "81c583829515c75c1dd81da4385a1a743aafa33b"
 
@@ -217,7 +212,7 @@ version = "0.13.1"
 [[deps.CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
-version = "1.3.0+1"
+version = "1.3.1+2"
 
 [[deps.ConcurrentUtilities]]
 deps = ["Serialization", "Sockets"]
@@ -677,7 +672,7 @@ version = "1.6.1"
 [[deps.OpenSSL_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "458c3c95-2e84-50aa-8efc-19380b2a3a95"
-version = "3.5.4+0"
+version = "3.5.6+0"
 
 [[deps.Opus_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
@@ -1306,13 +1301,10 @@ version = "1.13.0+0"
 
 # ╔═╡ Cell order:
 # ╠═bf739f8c-4576-40c0-81b3-f48dbfa3e8ea
-# ╠═e50d0857-d96f-428f-ae1c-8a2edf397135
-# ╠═96a54534-ada9-4c41-8c7a-767f10bb9d9b
 # ╟─fdeb7b6a-d172-4849-89d8-4ad879521d05
-# ╟─a191bdeb-f089-45f3-8b1e-7658421be8e9
 # ╟─6ee78a6b-6e0f-45fd-a670-65dc7108445f
+# ╠═c6567aa1-a53e-4cde-849e-bf066802c0a9
 # ╠═4f6d58fd-09b8-47dc-8a00-80051f6781ed
 # ╠═2b42cd4b-ce18-4d6c-99a9-8c31a3e25639
-# ╠═1124c018-9996-437f-8ff3-5de267c0e9fe
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
