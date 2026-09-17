@@ -104,8 +104,8 @@ end;
 
 # ╔═╡ c6567aa1-a53e-4cde-849e-bf066802c0a9
 let
-	xs = range(-2, 2, length=160)
-	ys = range(-2, 2, length=160)
+	xs = range(-2, 2, length=161)
+	ys = range(-2, 2, length=161)
 	charges = (Charge(q1, SVector(x1, 0.0)), Charge(q2, SVector(x2, 0.0)))
 	Vs, ψs = field_grid(xs, ys, charges)
 
