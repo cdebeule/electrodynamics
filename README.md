@@ -29,9 +29,9 @@ The steps below are reproduced from the [Pluto install guide](https://plutojl.or
    
       Pluto will download and run it automatically.
 
-   - **From your own computer**: clone or download this repository, then enter the local path to the notebook (e.g. `pluto/two-charge-field.jl`) in the "Open a notebook" box.
+   - **From your own computer**: clone or download this repository, then enter the local path to the notebook (e.g. `pluto/two-charges-field.jl`) in the "Open a notebook" box.
 
 ## Notebooks
 
-- [two-charge-field.jl](pluto/two-charge-field.jl)
+- [two-charges-field.jl](pluto/two-charges-field.jl)
 - [laplace.jl](pluto/laplace.jl)
