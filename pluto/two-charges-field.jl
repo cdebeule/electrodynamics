@@ -94,7 +94,7 @@ end;
 function field_grid(xs, ys, charges; vmax = 4.0)
     Vs = Matrix{Float64}(undef, length(ys), length(xs))
     ψs = similar(Vs)
-    @inbounds for (j, x) in enumerate(xs), (i, y) in enumerate(ys)   # column-major order
+    @inbounds for (j, x) in enumerate(xs), (i, y) in enumerate(ys)
         V, ψ = potential_and_stream(x, y, charges)
         Vs[i, j] = clamp(V, -vmax, vmax)
         ψs[i, j] = clamp(ψ, -vmax, vmax)
